@@ -3,6 +3,7 @@ npm-debug.log*
 
 # 프로젝트 의존성 파일들
 node_modules
+.next
 
 # babel after files
 dist
