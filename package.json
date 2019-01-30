@@ -20,11 +20,13 @@
   },
   "homepage": "https://github.com/boramyy/learningJS#readme",
   "dependencies": {
+    "@zeit/next-css": "^1.0.1",
     "axios": "^0.18.0",
     "express": "^4.16.4",
     "gulp": "^4.0.0",
     "next": "^7.0.2",
     "react": "^16.7.0",
+    "react-alice-carousel": "^1.13.0",
     "react-dom": "^16.7.0",
     "styled-components": "^4.1.3"
   },
