@@ -17,13 +17,9 @@ const GlobalStyle = createGlobalStyle`
     letter-spacing: -1px;
     word-spacing: 2px;
   }
-  h2, h3 {
-    margin-bottom: 30px;
-    font-weight:bold;
-    line-height:1;
-  }
-  h2 {font-size: 1.3em;}
-  h3 {font-size: 1.1em;}
+  h2, h3 {font-weight:bold;line-height:1;}
+  h2 {margin-bottom:30px;font-size:1.3em;}
+  h3 {margin-bottom:25px;font-size:1.1em;}
   ul {
     margin-block-start: 0;
     margin-block-end: 0;
