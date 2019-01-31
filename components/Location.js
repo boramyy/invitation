@@ -30,19 +30,28 @@ const MapBox = styled.div`
 `;
 
 const ButtonBox = styled.div`
+  overflow: hidden;
   position: absolute;
   right: 30px;
-  overflow: hidden;
   margin-top: -25px;
   z-index: 10;
 `
-const ButtonNavi = styled.button`
+
+const NaviLink = props => (
+  <a className={props.className} href={props.href} onClick={props.onClick}>
+    <img src={props.src}/>
+  </a>
+)
+
+const StyledNaviLink = styled(NaviLink)`
   float: left;
+  overflow: hidden;
   width: 45px;
   height: 45px;
   margin-left: 15px;
   border-radius: 50%;
   background-color: #ccc;
+  cursor: pointer;
 `;
 
 const WayBox = styled.div`
@@ -60,33 +69,50 @@ class Location extends React.Component {
     super(props);
   }
 
+  handles = {
+    getMap: function () {
+      const container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
+      const positionCenter = new daum.maps.LatLng(37.51492617882784, 127.10111030204156);
+      const options = { //지도를 생성할 때 필요한 기본 옵션
+        center: positionCenter,
+        level: 4
+      };
+      //지도 생성 및 객체 리턴
+      const map = new daum.maps.Map(container, options); 
+      
+      // 마커 생성
+      const positionApelgamo = new daum.maps.LatLng(37.51592626764367, 127.09964406341295);
+      const marker = new daum.maps.Marker({
+        map: map,
+        position: positionApelgamo
+      });
+
+      // 커스텀 오버레이 생성
+      const content = '<span class="custom-overlay">아펠가모</span>';
+      const customOverlay = new daum.maps.CustomOverlay({
+        map: map,
+        position: positionApelgamo,
+        content: content,
+        yAnchor: 1
+      });
+    },
+    openKakaoNavi: function(e) {
+      e.preventDefault();
+      //<![CDATA[
+        Kakao.Navi.start({
+          name: "아펠가모 잠실",
+          x: 127.09964406341295,
+          y: 37.51592626764367,
+          coordType: "wgs84"
+        });
+      //]]>
+    },
+    
+  }
+
   componentDidMount() {
-    const container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
-
-    const positionCenter = new daum.maps.LatLng(37.51492617882784, 127.10111030204156);
-    const positionApelgamo = new daum.maps.LatLng(37.51592626764367, 127.09964406341295);
-
-    const options = { //지도를 생성할 때 필요한 기본 옵션
-      center: positionCenter,
-      level: 4
-    };
-
-    const map = new daum.maps.Map(container, options); //지도 생성 및 객체 리턴
-    const marker = new daum.maps.Marker({
-      map: map,
-      position: positionApelgamo
-    });
-
-    // 커스텀 오버레이에 표출될 내용
-    const content = '<span class="custom-overlay">아펠가모</span>';
-
-    // 커스텀 오버레이 생성
-    const customOverlay = new daum.maps.CustomOverlay({
-      map: map,
-      position: positionApelgamo,
-      content: content,
-      yAnchor: 1
-    });
+    Kakao.init("969225fd468a90819932423f35c6a247");
+    this.handles.getMap();
   }
 
   render() {
@@ -94,9 +120,9 @@ class Location extends React.Component {
         <h2>아펠가모 잠실</h2>
         <MapBox id="map" />
         <ButtonBox>
-          <ButtonNavi />
-          <ButtonNavi />
-          <ButtonNavi />
+          <StyledNaviLink href="#!" src="/static/images/img_05.jpeg" onClick={e => this.handles.openKakaoNavi(e)} onClickCapture={e => this.handles.openKakaoNavi(e)} />
+          <StyledNaviLink href="#!" src="/static/images/img_04.jpeg" />
+          <StyledNaviLink href="#!" src="/static/images/img_03.jpeg" />
         </ButtonBox>
         <Address>
           서울특별시 송파구
