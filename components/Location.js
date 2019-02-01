@@ -51,6 +51,9 @@ const StyledNaviLink = styled(NaviLink)`
   border-radius: 50%;
   background-color: #ccc;
   cursor: pointer;
+  & img {
+    width: 100%;
+  }
 `;
 
 const WayBox = styled.div`
@@ -179,7 +182,7 @@ class Location extends React.Component {
         <h2>아펠가모 잠실</h2>
         <MapBox id="map" />
         <ButtonBox>
-          <StyledNaviLink href="#!" src="/static/images/img_05.jpeg" onClick={e => this.handles.openKakaoNavi(e)} onClickCapture={e => this.handles.openKakaoNavi(e)} />
+          <StyledNaviLink href="#!" src="/static/images/kakaonavi_btn_medium.png" onClick={e => this.handles.openKakaoNavi(e)} onClickCapture={e => this.handles.openKakaoNavi(e)} />
           <StyledNaviLink href="#!" src="/static/images/img_04.jpeg" />
           <StyledNaviLink href="#!" src="/static/images/img_03.jpeg" />
         </ButtonBox>
@@ -206,8 +209,6 @@ class Location extends React.Component {
               잠실대교 남단 교차로에서 우회전
             </b> 한국광고문화회관 2층
           </p>
-          {/* <BusTitle color={"#3f68ff"}>파란 간선버스</BusTitle>
-          <BusList>301 302 303 320 341 351 360 362 N13</BusList> */}
           <BusInfo busInfo={this.state.busInfo} />
         </WayBox>
       </article>;
