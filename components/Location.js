@@ -41,8 +41,7 @@ const NaviLink = props => (
   <a className={props.className} href={props.href} onClick={props.onClick}>
     <img src={props.src}/>
   </a>
-)
-
+);
 const StyledNaviLink = styled(NaviLink)`
   float: left;
   overflow: hidden;
@@ -59,14 +58,74 @@ const WayBox = styled.div`
   & > p {margin-top:-5px; line-height:1.6;}
   & > p > b {font-weight: normal;}
 `
-
 const Address = styled.p`
   margin-top: 25px;
 `
+const ColorSpan = styled.span`
+  font-weight: 400;
+  color: ${props => props.color};
+  word-break: keep-all;
+`;
+
+const BusInfo = props =>
+  props.busInfo.map(info => (
+    <BusInfoBox>
+      <BusTitle color={info.color}>{info.title}</BusTitle>
+      <BusList>
+        {info.buses.map(bus => (<BusNum>{bus}</BusNum>))}
+      </BusList>
+    </BusInfoBox>
+  ));
+
+const BusInfoBox = styled.div`
+  overflow: hidden;
+  margin-top: 30px;
+`;
+
+const BusTitle = styled(ColorSpan)`
+  display: block;
+  float: left;
+  width: 52px;
+  margin-right: 30px;
+`;
+
+const BusList = styled.div`
+  float: left;
+  width: 230px;
+`;
+
+const BusNum = styled.span`
+  display: inline-block;
+  margin-right: 10px;
+`;
 
 class Location extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      busInfo: [
+        {
+          title: '파란 간선버스',
+          color: '#3f68ff',
+          buses: ['301', '302', '303', '320', '341', '351', '360', '362', 'N13']
+        },
+        {
+          title: '빨간 광역버스',
+          color: '#f61919',
+          buses: ['116', '119', '1001', '1007', '1009', '1112', '1115-6', '1117', '1650', '9403', 'M2316']
+        },
+        {
+          title: '초록 지선버스',
+          color: '#00ab50',
+          buses: ['2311', '2412', '2415', '3216', '3217', '3313', '3314', '3315', '3317', '3318', '3411', '3412', '3413', '3414', '4318', '4319']
+        },
+        {
+          title: '시외버스',
+          color: '#3a3a3a',
+          buses: ['16', '30-1', '30-3', '30-5', '32', '70', '101', '116', '119', '2000-2']
+        }
+      ]
+    }
   }
 
   handles = {
@@ -135,7 +194,9 @@ class Location extends React.Component {
         <WayBox>
           <h3>지하철로 오시는 방법</h3>
           <p>
-            <b>잠실역 7번출구(2호선, 8호선)</b>로 나와 잠실대교 방면 200m 직진 후 삼거리에서 우회전 한국광고문화회관 2층 (도보 5분)
+            <b>
+              잠실역 7번출구(<ColorSpan color={"#61b057"}>2호선</ColorSpan>, <ColorSpan color={"#ff4585"}>8호선</ColorSpan>)
+            </b>로 나와 잠실대교 방면 200m 직진 후 삼거리에서 우회전 한국광고문화회관 2층 (도보 5분)
           </p>
         </WayBox>
         <WayBox>
@@ -145,6 +206,9 @@ class Location extends React.Component {
               잠실대교 남단 교차로에서 우회전
             </b> 한국광고문화회관 2층
           </p>
+          {/* <BusTitle color={"#3f68ff"}>파란 간선버스</BusTitle>
+          <BusList>301 302 303 320 341 351 360 362 N13</BusList> */}
+          <BusInfo busInfo={this.state.busInfo} />
         </WayBox>
       </article>;
   }
