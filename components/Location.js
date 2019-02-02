@@ -30,7 +30,6 @@ const MapBox = styled.div`
 `;
 
 const ButtonBox = styled.div`
-  overflow: hidden;
   position: absolute;
   right: 30px;
   margin-top: -25px;
@@ -44,15 +43,16 @@ const NaviLink = props => (
 );
 const StyledNaviLink = styled(NaviLink)`
   float: left;
-  overflow: hidden;
   width: 45px;
   height: 45px;
   margin-left: 15px;
+  background-color: none;
   border-radius: 50%;
-  background-color: #ccc;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   & img {
     width: 100%;
+    border-radius: 50%;
   }
 `;
 
@@ -71,11 +71,13 @@ const ColorSpan = styled.span`
 `;
 
 const BusInfo = props =>
-  props.busInfo.map(info => (
-    <BusInfoBox>
+  props.busInfo.map((info, infoIdx) => (
+    <BusInfoBox key={infoIdx}>
       <BusTitle color={info.color}>{info.title}</BusTitle>
       <BusList>
-        {info.buses.map(bus => (<BusNum>{bus}</BusNum>))}
+        {info.buses.map((bus, i) => (
+          <BusNum key={i}>{bus}</BusNum>
+        ))}
       </BusList>
     </BusInfoBox>
   ));
@@ -182,9 +184,8 @@ class Location extends React.Component {
         <h2>아펠가모 잠실</h2>
         <MapBox id="map" />
         <ButtonBox>
-          <StyledNaviLink href="#!" src="/static/images/kakaonavi_btn_medium.png" onClick={e => this.handles.openKakaoNavi(e)} onClickCapture={e => this.handles.openKakaoNavi(e)} />
-          <StyledNaviLink href="#!" src="/static/images/img_04.jpeg" />
-          <StyledNaviLink href="#!" src="/static/images/img_03.jpeg" />
+          <StyledNaviLink src="/static/images/kakaonavi_btn.jpg" href="#!" onClick={e => this.handles.openKakaoNavi(e)} onClickCapture={e => this.handles.openKakaoNavi(e)} />
+          <StyledNaviLink src="/static/images/tmap_btn.jpg" href="https://api2.sktelecom.com/tmap/app/routes?appKey=195e2e4e-4284-408b-b8c2-da611faa8493&name=아펠가모 잠실&lon=127.09964406341295&lat=37.51592626764367" />
         </ButtonBox>
         <Address>
           서울특별시 송파구
@@ -198,7 +199,11 @@ class Location extends React.Component {
           <h3>지하철로 오시는 방법</h3>
           <p>
             <b>
-              잠실역 7번출구(<ColorSpan color={"#61b057"}>2호선</ColorSpan>, <ColorSpan color={"#ff4585"}>8호선</ColorSpan>)
+              잠실역 7번출구(<ColorSpan color={"#61b057"}>2호선</ColorSpan>, <ColorSpan
+                color={"#ff4585"}
+              >
+                8호선
+              </ColorSpan>)
             </b>로 나와 잠실대교 방면 200m 직진 후 삼거리에서 우회전 한국광고문화회관 2층 (도보 5분)
           </p>
         </WayBox>
