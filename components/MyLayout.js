@@ -6,13 +6,11 @@ import Share from "./Share";
 
 const Layout = props => (
   <div>
-    {/* <Header /> */}
     <Intro />
     <ImageSlider />
     <GuestBook />
     <Location />
     <Share />
-    {/* {props.children} */}
   </div>
 );
 

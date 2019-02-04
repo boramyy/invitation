@@ -52,7 +52,7 @@ class InputForm extends React.Component {
       padding-top: 4px;
       padding-bottom: 4px;
       font-size: 15px;
-      border-bottom: 0.5px solid #111 !important;
+      border-bottom: 0.5px solid #333 !important;
       box-sizing: border-box;
     `;
     const Textarea = styled.textarea`
@@ -64,7 +64,7 @@ class InputForm extends React.Component {
       font-size: 15px;
       line-height: 1.4;
       vertical-align: middle;
-      border-bottom: 0.5px solid #111 !important;
+      border-bottom: 0.5px solid #333 !important;
       box-sizing: border-box;
       resize: none;
     `;
