@@ -1,17 +1,28 @@
 {
   "presets": [
     [
+      "@babel/env",
+      "@babel/preset-typescript",
       "next/babel"
     ]
   ],
   "plugins": [
     [
-      "babel-plugin-styled-components", {
+      "babel-plugin-styled-components",
+      {
         "ssr": true,
         "displayName": true,
         "preprocess": false,
         "minify": true
       }
-    ]
-  ]
+    ],
+    "@babel/proposal-class-properties",
+    "@babel/proposal-object-rest-spread",
+    "@babel/plugin-transform-typescript"
+  ],
+  "extensions": [
+    ".js",
+    ".jsx",
+    ".ts",
+  ],
 }
