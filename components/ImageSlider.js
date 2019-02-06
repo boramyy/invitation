@@ -3,28 +3,11 @@ import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 
 const ImgForSlide = styled.img`
-  width: 100%
-`;
-
-const WrapBoxThumb = styled.ul`
-  overflow: hidden;
-`;
-
-const BoxThumb = styled.li`
-  float: left;
-  width: 20%;
-  padding:4px;
-  list-style: none;
-  box-sizing: border-box;
-`;
-
-const Thumb = styled.div`
-  position: relative;
   width: 100%;
-  padding-top: 100%;
-  border-radius: 50%;
-  background-image: ${props => `${props.thumbnail}`};
-  background-color: #ccc;
+`;
+
+const StyledSlider = styled(AliceCarousel)`
+  width: 100%;
 `;
 
 class ImageSlider extends React.Component {
@@ -35,60 +18,72 @@ class ImageSlider extends React.Component {
       currentIndex: 0,
       images: [
         {
-          origin: "/static/images/img_05.jpeg",
-          thumbnail: "/static/images/thumb_img_05.jpeg"
+          origin: "/static/images/img_01.jpeg",
+          thumbnail: "/static/images/img_01.jpeg"
         },
         {
-          origin: "/static/images/img_01.jpeg",
-          thumbnail: "/static/images/thumb_img_01.jpeg"
+          origin: "/static/images/img_02.jpeg",
+          thumbnail: "/static/images/img_02.jpeg"
         },
         {
           origin: "/static/images/img_03.jpeg",
-          thumbnail: "/static/images/thumb_img_03.jpeg"
+          thumbnail: "/static/images/img_03.jpeg"
         },
         {
           origin: "/static/images/img_04.jpeg",
-          thumbnail: "/static/images/thumb_img_04.jpeg"
+          thumbnail: "/static/images/img_04.jpeg"
+        },
+        {
+          origin: "/static/images/img_05.jpeg",
+          thumbnail: "/static/images/img_05.jpeg"
+        },
+        {
+          origin: "/static/images/img_06.jpeg",
+          thumbnail: "/static/images/img_06.jpeg"
+        },
+        {
+          origin: "/static/images/img_07.jpeg",
+          thumbnail: "/static/images/img_07.jpeg"
+        },
+        {
+          origin: "/static/images/img_08.jpeg",
+          thumbnail: "/static/images/img_08.jpeg"
+        },
+        {
+          origin: "/static/images/img_09.jpeg",
+          thumbnail: "/static/images/img_09.jpeg"
+        },
+        {
+          origin: "/static/images/img_10.jpeg",
+          thumbnail: "/static/images/img_10.jpeg"
         },
         {
           origin: "/static/images/img_11.jpeg",
-          thumbnail: "/static/images/thumb_img_11.jpeg"
-        },
-        {
-          origin: "/static/images/img_12.jpeg",
-          thumbnail: "/static/images/thumb_img_12.jpeg"
-        },
-        {
-          origin: "/static/images/img_13.jpeg",
-          thumbnail: "/static/images/thumb_img_13.jpeg"
+          thumbnail: "/static/images/img_11.jpeg"
         }
       ]
     };
 
     this.handle = {
-      slideTo: i => this.setState({ currentIndex: i }),
       getGalleryItems: this.state.images.map((item, idx) => (
         <ImgForSlide key={idx} src={item.origin} />
-      )),
-      getThumbItems: this.state.images.map((item, idx) => (
-        <BoxThumb key={idx}>
-          <Thumb
-            thumbnail={item.thumbnail}
-            onClick={() => this.handle.slideTo(idx)}
-          />
-        </BoxThumb>
-      ))  
+      ))
     };
   }
 
   render() {
-    const { getGalleryItems, getThumbItems } = this.handle;
-    const { currentIndex } = this.state;
+    const {
+      getGalleryItems
+    } = this.handle;
     return (
       <article>
         <h2 className="hide">Image Slider</h2>
-        <AliceCarousel items={getGalleryItems} dotsDisabled={true} buttonsDisabled={true} slideToIndex={currentIndex} />
-        <WrapBoxThumb>{getThumbItems}</WrapBoxThumb>
+        <StyledSlider
+          items={getGalleryItems}
+          dotsDisabled={false}
+          buttonsDisabled={true}
+          ref={el => (this.Carousel = el)}
+        />
       </article>
     );
   }

@@ -34,6 +34,10 @@ class Intro extends React.Component {
             귀한 걸음 하시어 축복해주시면 <br />
             더없는 격려와 기쁨으로 간직하겠습니다.
           </TextThanks>
+          <TextThanks>
+            2019년 3월 10일 일요일 11시 <br />
+            잠실 아펠가모
+          </TextThanks>
           <ImgWho className="img-who" src="/static/images/who.jpg" />
         </BoxText>
       </article>

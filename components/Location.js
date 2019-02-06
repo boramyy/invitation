@@ -175,13 +175,12 @@ class Location extends React.Component {
   }
 
   componentDidMount() {
-    Kakao.init("969225fd468a90819932423f35c6a247");
     this.handles.getMap();
   }
 
   render() {
     return <article className="wrap-content">
-        <h2>아펠가모 잠실</h2>
+        <h2>잠실 아펠가모</h2>
         <MapBox id="map" />
         <ButtonBox>
           <StyledNaviLink src="/static/images/kakaonavi_btn.jpg" href="#!" onClick={e => this.handles.openKakaoNavi(e)} onClickCapture={e => this.handles.openKakaoNavi(e)} />
@@ -193,7 +192,10 @@ class Location extends React.Component {
         </Address>
         <WayBox>
           <h3>자가용</h3>
-          <p>주차 2시간 무료</p>
+          <p>
+            내비게이션에 <b>잠실 아펠가모</b> 검색<br/>
+            주차 2시간 무료
+          </p>
         </WayBox>
         <WayBox>
           <h3>지하철로 오시는 방법</h3>
