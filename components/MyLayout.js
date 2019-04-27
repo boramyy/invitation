@@ -1,7 +1,3 @@
-import Intro from "./Intro";
-import ImageSlider from "./ImageSlider";
-import Location from "./Location";
-import Share from "./Share";
 
 class Layout extends React.Component {
   componentDidMount() {

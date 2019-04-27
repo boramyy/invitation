@@ -70,8 +70,8 @@ const ColorSpan = styled.span`
   word-break: keep-all;
 `;
 
-const BusInfo = props =>
-  props.busInfo.map((info, infoIdx) => (
+function BusInfo(props){
+  return props.busInfo.map((info, infoIdx) => (
     <BusInfoBox key={infoIdx}>
       <BusTitle color={info.color}>{info.title}</BusTitle>
       <BusList>
@@ -81,6 +81,7 @@ const BusInfo = props =>
       </BusList>
     </BusInfoBox>
   ));
+}
 
 const BusInfoBox = styled.div`
   overflow: hidden;
@@ -133,49 +134,46 @@ class Location extends React.Component {
     }
   }
 
-  handles = {
-    getMap: function () {
-      const container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
-      const positionCenter = new daum.maps.LatLng(37.51492617882784, 127.10111030204156);
-      const options = { //지도를 생성할 때 필요한 기본 옵션
-        center: positionCenter,
-        level: 4
-      };
-      //지도 생성 및 객체 리턴
-      const map = new daum.maps.Map(container, options); 
-      
-      // 마커 생성
-      const positionApelgamo = new daum.maps.LatLng(37.51592626764367, 127.09964406341295);
-      const marker = new daum.maps.Marker({
-        map: map,
-        position: positionApelgamo
-      });
-
-      // 커스텀 오버레이 생성
-      const content = '<span class="custom-overlay">아펠가모</span>';
-      const customOverlay = new daum.maps.CustomOverlay({
-        map: map,
-        position: positionApelgamo,
-        content: content,
-        yAnchor: 1
-      });
-    },
-    openKakaoNavi: function(e) {
-      e.preventDefault();
-      //<![CDATA[
-        Kakao.Navi.start({
-          name: "아펠가모 잠실",
-          x: 127.09964406341295,
-          y: 37.51592626764367,
-          coordType: "wgs84"
-        });
-      //]]>
-    },
+  getMap = () => {
+    const container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
+    const positionCenter = new daum.maps.LatLng(37.51492617882784, 127.10111030204156);
+    const options = { //지도를 생성할 때 필요한 기본 옵션
+      center: positionCenter,
+      level: 4
+    };
+    //지도 생성 및 객체 리턴
+    const map = new daum.maps.Map(container, options); 
     
+    // 마커 생성
+    const positionApelgamo = new daum.maps.LatLng(37.51592626764367, 127.09964406341295);
+    const marker = new daum.maps.Marker({
+      map: map,
+      position: positionApelgamo
+    });
+
+    // 커스텀 오버레이 생성
+    const content = '<span class="custom-overlay">아펠가모</span>';
+    const customOverlay = new daum.maps.CustomOverlay({
+      map: map,
+      position: positionApelgamo,
+      content: content,
+      yAnchor: 1
+    });
+  }
+  openKakaoNavi = (e) => {
+    e.preventDefault();
+    //<![CDATA[
+      Kakao.Navi.start({
+        name: "아펠가모 잠실",
+        x: 127.09964406341295,
+        y: 37.51592626764367,
+        coordType: "wgs84"
+      });
+    //]]>
   }
 
   componentDidMount() {
-    this.handles.getMap();
+    this.getMap();
   }
 
   render() {
@@ -183,7 +181,7 @@ class Location extends React.Component {
         <h2>잠실 아펠가모</h2>
         <MapBox id="map" />
         <ButtonBox>
-          <StyledNaviLink src="/static/images/kakaonavi_btn.jpg" href="#!" onClick={e => this.handles.openKakaoNavi(e)} onClickCapture={e => this.handles.openKakaoNavi(e)} />
+          <StyledNaviLink src="/static/images/kakaonavi_btn.jpg" href="#!" onClick={e => this.openKakaoNavi(e)} onClickCapture={e => this.openKakaoNavi(e)} />
           <StyledNaviLink src="/static/images/tmap_btn.jpg" href="https://api2.sktelecom.com/tmap/app/routes?appKey=195e2e4e-4284-408b-b8c2-da611faa8493&name=아펠가모 잠실&lon=127.09964406341295&lat=37.51592626764367" />
         </ButtonBox>
         <Address>
