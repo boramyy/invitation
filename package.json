@@ -7,18 +7,20 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "node server.js",
     "build": "next build",
-    "start": "NODE_ENV=production node server.js"
+    "export": "next export",
+    "start": "NODE_ENV=production node server.js",
+    "deploy": "next build && next export && touch out/.nojekyll && git add out/ && git commit -m 'deploy to gh-pages' && git subtree push --prefix out origin gh-pages"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/boramyy/learningJS.git"
+    "url": "git+https://github.com/boramyy/invitation.git"
   },
   "author": "boramkim",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/boramyy/learningJS/issues"
+    "url": "https://github.com/boramyy/invitation/issues"
   },
-  "homepage": "https://github.com/boramyy/learningJS#readme",
+  "homepage": "https://github.com/boramyy/invitation#readme",
   "dependencies": {
     "@zeit/next-css": "^1.0.1",
     "axios": "^0.18.0",

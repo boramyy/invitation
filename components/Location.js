@@ -181,8 +181,8 @@ class Location extends React.Component {
         <h2>잠실 아펠가모</h2>
         <MapBox id="map" />
         <ButtonBox>
-          <StyledNaviLink src="/static/images/kakaonavi_btn.jpg" href="#!" onClick={e => this.openKakaoNavi(e)} onClickCapture={e => this.openKakaoNavi(e)} />
-          <StyledNaviLink src="/static/images/tmap_btn.jpg" href="https://api2.sktelecom.com/tmap/app/routes?appKey=195e2e4e-4284-408b-b8c2-da611faa8493&name=아펠가모 잠실&lon=127.09964406341295&lat=37.51592626764367" />
+          <StyledNaviLink src={`${this.props.prefix}/static/images/kakaonavi_btn.jpg`} href="#!" onClick={e => this.openKakaoNavi(e)} onClickCapture={e => this.openKakaoNavi(e)} />
+          <StyledNaviLink src={`${this.props.prefix}/static/images/tmap_btn.jpg`} href="https://api2.sktelecom.com/tmap/app/routes?appKey=195e2e4e-4284-408b-b8c2-da611faa8493&name=아펠가모 잠실&lon=127.09964406341295&lat=37.51592626764367" />
         </ButtonBox>
         <Address>
           서울특별시 송파구

@@ -18,48 +18,48 @@ class ImageSlider extends React.Component {
       currentIndex: 0,
       images: [
         {
-          origin: "/static/images/img_01.jpeg",
-          thumbnail: "/static/images/img_01.jpeg"
+          origin: `${this.props.prefix}/static/images/img_01.jpeg`,
+          thumbnail: `${this.props.prefix}/static/images/img_01.jpeg`
         },
         {
-          origin: "/static/images/img_02.jpeg",
-          thumbnail: "/static/images/img_02.jpeg"
+          origin: `${this.props.prefix}/static/images/img_02.jpeg`,
+          thumbnail: `${this.props.prefix}/static/images/img_02.jpeg`
         },
         {
-          origin: "/static/images/img_03.jpeg",
-          thumbnail: "/static/images/img_03.jpeg"
+          origin: `${this.props.prefix}/static/images/img_03.jpeg`,
+          thumbnail: `${this.props.prefix}/static/images/img_03.jpeg`
         },
         {
-          origin: "/static/images/img_04.jpeg",
-          thumbnail: "/static/images/img_04.jpeg"
+          origin: `${this.props.prefix}/static/images/img_04.jpeg`,
+          thumbnail: `${this.props.prefix}/static/images/img_04.jpeg`
         },
         {
-          origin: "/static/images/img_05.jpeg",
-          thumbnail: "/static/images/img_05.jpeg"
+          origin: `${this.props.prefix}/static/images/img_05.jpeg`,
+          thumbnail: `${this.props.prefix}/static/images/img_05.jpeg`
         },
         {
-          origin: "/static/images/img_06.jpeg",
-          thumbnail: "/static/images/img_06.jpeg"
+          origin: `${this.props.prefix}/static/images/img_06.jpeg`,
+          thumbnail: `${this.props.prefix}/static/images/img_06.jpeg`
         },
         {
-          origin: "/static/images/img_07.jpeg",
-          thumbnail: "/static/images/img_07.jpeg"
+          origin: `${this.props.prefix}/static/images/img_07.jpeg`,
+          thumbnail: `${this.props.prefix}/static/images/img_07.jpeg`
         },
         {
-          origin: "/static/images/img_08.jpeg",
-          thumbnail: "/static/images/img_08.jpeg"
+          origin: `${this.props.prefix}/static/images/img_08.jpeg`,
+          thumbnail: `${this.props.prefix}/static/images/img_08.jpeg`
         },
         {
-          origin: "/static/images/img_09.jpeg",
-          thumbnail: "/static/images/img_09.jpeg"
+          origin: `${this.props.prefix}/static/images/img_09.jpeg`,
+          thumbnail: `${this.props.prefix}/static/images/img_09.jpeg`
         },
         {
-          origin: "/static/images/img_10.jpeg",
-          thumbnail: "/static/images/img_10.jpeg"
+          origin: `${this.props.prefix}/static/images/img_10.jpeg`,
+          thumbnail: `${this.props.prefix}/static/images/img_10.jpeg`
         },
         {
-          origin: "/static/images/img_11.jpeg",
-          thumbnail: "/static/images/img_11.jpeg"
+          origin: `${this.props.prefix}/static/images/img_11.jpeg`,
+          thumbnail: `${this.props.prefix}/static/images/img_11.jpeg`
         }
       ]
     };
