@@ -62,38 +62,38 @@ function (_React$Component) {
     _this.state = {
       currentIndex: 0,
       images: [{
-        origin: "/static/images/img_01.jpeg",
-        thumbnail: "/static/images/img_01.jpeg"
+        origin: "".concat(_this.props.prefix, "/static/images/img_01.jpeg"),
+        thumbnail: "".concat(_this.props.prefix, "/static/images/img_01.jpeg")
       }, {
-        origin: "/static/images/img_02.jpeg",
-        thumbnail: "/static/images/img_02.jpeg"
+        origin: "".concat(_this.props.prefix, "/static/images/img_02.jpeg"),
+        thumbnail: "".concat(_this.props.prefix, "/static/images/img_02.jpeg")
       }, {
-        origin: "/static/images/img_03.jpeg",
-        thumbnail: "/static/images/img_03.jpeg"
+        origin: "".concat(_this.props.prefix, "/static/images/img_03.jpeg"),
+        thumbnail: "".concat(_this.props.prefix, "/static/images/img_03.jpeg")
       }, {
-        origin: "/static/images/img_04.jpeg",
-        thumbnail: "/static/images/img_04.jpeg"
+        origin: "".concat(_this.props.prefix, "/static/images/img_04.jpeg"),
+        thumbnail: "".concat(_this.props.prefix, "/static/images/img_04.jpeg")
       }, {
-        origin: "/static/images/img_05.jpeg",
-        thumbnail: "/static/images/img_05.jpeg"
+        origin: "".concat(_this.props.prefix, "/static/images/img_05.jpeg"),
+        thumbnail: "".concat(_this.props.prefix, "/static/images/img_05.jpeg")
       }, {
-        origin: "/static/images/img_06.jpeg",
-        thumbnail: "/static/images/img_06.jpeg"
+        origin: "".concat(_this.props.prefix, "/static/images/img_06.jpeg"),
+        thumbnail: "".concat(_this.props.prefix, "/static/images/img_06.jpeg")
       }, {
-        origin: "/static/images/img_07.jpeg",
-        thumbnail: "/static/images/img_07.jpeg"
+        origin: "".concat(_this.props.prefix, "/static/images/img_07.jpeg"),
+        thumbnail: "".concat(_this.props.prefix, "/static/images/img_07.jpeg")
       }, {
-        origin: "/static/images/img_08.jpeg",
-        thumbnail: "/static/images/img_08.jpeg"
+        origin: "".concat(_this.props.prefix, "/static/images/img_08.jpeg"),
+        thumbnail: "".concat(_this.props.prefix, "/static/images/img_08.jpeg")
       }, {
-        origin: "/static/images/img_09.jpeg",
-        thumbnail: "/static/images/img_09.jpeg"
+        origin: "".concat(_this.props.prefix, "/static/images/img_09.jpeg"),
+        thumbnail: "".concat(_this.props.prefix, "/static/images/img_09.jpeg")
       }, {
-        origin: "/static/images/img_10.jpeg",
-        thumbnail: "/static/images/img_10.jpeg"
+        origin: "".concat(_this.props.prefix, "/static/images/img_10.jpeg"),
+        thumbnail: "".concat(_this.props.prefix, "/static/images/img_10.jpeg")
       }, {
-        origin: "/static/images/img_11.jpeg",
-        thumbnail: "/static/images/img_11.jpeg"
+        origin: "".concat(_this.props.prefix, "/static/images/img_11.jpeg"),
+        thumbnail: "".concat(_this.props.prefix, "/static/images/img_11.jpeg")
       }]
     };
     _this.handle = {
@@ -166,41 +166,41 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 
-var BoxText = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
-  displayName: "Intro__BoxText",
-  componentId: "sc-1423dq1-0"
-})(["margin-top:3em;margin-bottom:3.4em;"]);
-var TextThanks = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].p.withConfig({
-  displayName: "Intro__TextThanks",
-  componentId: "sc-1423dq1-1"
-})(["font-size:1.2em;text-align:center;&:after{content:\"\";display:block;width:15px;height:2px;margin:1.8em auto;background-color:#eee;}"]);
-var ImgWho = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].img.withConfig({
-  displayName: "Intro__ImgWho",
-  componentId: "sc-1423dq1-2"
-})(["width:215px;margin:0 auto;"]);
 
 var Intro =
 /*#__PURE__*/
 function (_React$Component) {
   _inherits(Intro, _React$Component);
 
-  function Intro() {
+  function Intro(props) {
     _classCallCheck(this, Intro);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Intro).apply(this, arguments));
+    return _possibleConstructorReturn(this, _getPrototypeOf(Intro).call(this, props));
   }
 
   _createClass(Intro, [{
     key: "render",
     value: function render() {
+      var BoxText = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
+        displayName: "Intro__BoxText",
+        componentId: "sc-1423dq1-0"
+      })(["margin-top:3em;margin-bottom:3.4em;"]);
+      var TextThanks = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].p.withConfig({
+        displayName: "Intro__TextThanks",
+        componentId: "sc-1423dq1-1"
+      })(["font-size:1.2em;text-align:center;&:after{content:\"\";display:block;width:15px;height:2px;margin:1.8em auto;background-color:#eee;}"]);
+      var ImgWho = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].img.withConfig({
+        displayName: "Intro__ImgWho",
+        componentId: "sc-1423dq1-2"
+      })(["width:215px;margin:0 auto;"]);
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("article", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
         className: "hide"
       }, "Intro"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "content-large",
-        src: "/static/images/intro.jpg"
+        src: "".concat(this.props.prefix, "/static/images/intro.jpg")
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(BoxText, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(TextThanks, null, "\uADC0\uD55C \uAC78\uC74C \uD558\uC2DC\uC5B4 \uCD95\uBCF5\uD574\uC8FC\uC2DC\uBA74 ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "\uB354\uC5C6\uB294 \uACA9\uB824\uC640 \uAE30\uC068\uC73C\uB85C \uAC04\uC9C1\uD558\uACA0\uC2B5\uB2C8\uB2E4."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(TextThanks, null, "2019\uB144 3\uC6D4 10\uC77C \uC77C\uC694\uC77C 11\uC2DC ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "\uC7A0\uC2E4 \uC544\uD3A0\uAC00\uBAA8"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ImgWho, {
         className: "img-who",
-        src: "/static/images/who.jpg"
+        src: "".concat(this.props.prefix, "/static/images/who.jpg")
       })));
     }
   }]);
@@ -403,7 +403,7 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "\uC7A0\uC2E4 \uC544\uD3A0\uAC00\uBAA8"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(MapBox, {
         id: "map"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ButtonBox, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(StyledNaviLink, {
-        src: "/static/images/kakaonavi_btn.jpg",
+        src: "".concat(this.props.prefix, "/static/images/kakaonavi_btn.jpg"),
         href: "#!",
         onClick: function onClick(e) {
           return _this2.openKakaoNavi(e);
@@ -412,7 +412,7 @@ function (_React$Component) {
           return _this2.openKakaoNavi(e);
         }
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(StyledNaviLink, {
-        src: "/static/images/tmap_btn.jpg",
+        src: "".concat(this.props.prefix, "/static/images/tmap_btn.jpg"),
         href: "https://api2.sktelecom.com/tmap/app/routes?appKey=195e2e4e-4284-408b-b8c2-da611faa8493&name=\uC544\uD3A0\uAC00\uBAA8 \uC7A0\uC2E4&lon=127.09964406341295&lat=37.51592626764367"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Address, null, "\uC11C\uC6B8\uD2B9\uBCC4\uC2DC \uC1A1\uD30C\uAD6C", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), " \uC62C\uB9BC\uD53D\uB85C35\uAE38 137 \uD55C\uAD6D\uAD11\uACE0\uBB38\uD654\uD68C\uAD00 2\uCE35"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(WayBox, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "\uC790\uAC00\uC6A9"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "\uB0B4\uBE44\uAC8C\uC774\uC158\uC5D0 ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", null, "\uC7A0\uC2E4 \uC544\uD3A0\uAC00\uBAA8"), " \uAC80\uC0C9", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "\uC8FC\uCC28 2\uC2DC\uAC04 \uBB34\uB8CC")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(WayBox, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "\uC9C0\uD558\uCCA0\uB85C \uC624\uC2DC\uB294 \uBC29\uBC95"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", null, "\uC7A0\uC2E4\uC5ED 7\uBC88\uCD9C\uAD6C(", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ColorSpan, {
         color: "#61b057"
@@ -466,36 +466,18 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
-var StyledH2 = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].h2.withConfig({
-  displayName: "Share__StyledH2",
-  componentId: "sc-1mtupyi-0"
-})(["display:inline-block;margin-bottom:0;color:#fff;"]);
-var Btn = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].button.withConfig({
-  displayName: "Share__Btn",
-  componentId: "sc-1mtupyi-1"
-})(["float:right;width:34px;height:34px;margin-top:-5px;background-image:url(\"static/images/kakaolink_btn_medium.png\");background-size:34px 34px;background-position:center center;background-repeat:no-repeat;&:active{background-image:url(\"static/images/kakaolink_btn_medium_ov.png\");}"]);
-var StyledArticle = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].article.withConfig({
-  displayName: "Share__StyledArticle",
-  componentId: "sc-1mtupyi-2"
-})(["margin-bottom:0!important;padding-top:20px;padding-bottom:40px;background-color:#333;"]);
 
 var Share =
 /*#__PURE__*/
 function (_React$Component) {
   _inherits(Share, _React$Component);
 
-  function Share() {
-    var _getPrototypeOf2;
-
+  function Share(props) {
     var _this;
 
     _classCallCheck(this, Share);
 
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(Share)).call.apply(_getPrototypeOf2, [this].concat(args)));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Share).call(this, props));
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handles", {
       sendLink: function sendLink(e) {
@@ -511,6 +493,18 @@ function (_React$Component) {
   _createClass(Share, [{
     key: "render",
     value: function render() {
+      var StyledH2 = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].h2.withConfig({
+        displayName: "Share__StyledH2",
+        componentId: "sc-1mtupyi-0"
+      })(["display:inline-block;margin-bottom:0;color:#fff;"]);
+      var Btn = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].button.withConfig({
+        displayName: "Share__Btn",
+        componentId: "sc-1mtupyi-1"
+      })(["float:right;width:34px;height:34px;margin-top:-5px;background-image:url(\"", "/static/images/kakaolink_btn_medium.png\");background-size:34px 34px;background-position:center center;background-repeat:no-repeat;&:active{background-image:url(\"", "/static/images/kakaolink_btn_medium_ov.png\");}"], this.props.prefix, this.props.prefix);
+      var StyledArticle = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].article.withConfig({
+        displayName: "Share__StyledArticle",
+        componentId: "sc-1mtupyi-2"
+      })(["margin-bottom:0!important;padding-top:20px;padding-bottom:40px;background-color:#333;"]);
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(StyledArticle, {
         className: "wrap-content"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(StyledH2, null, "\uACF5\uC720\uD558\uAE30"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Btn, {
@@ -6731,9 +6725,18 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      var prefix =  false ? undefined : '';
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         className: "hide"
-      }, "\uC900\uD638\uC640 \uD55C\uB098 \uACB0\uD63C\uD569\uB2C8\uB2E4."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Intro__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_ImageSlider__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Location__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Share__WEBPACK_IMPORTED_MODULE_4__["default"], null));
+      }, "\uC900\uD638\uC640 \uD55C\uB098 \uACB0\uD63C\uD569\uB2C8\uB2E4."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Intro__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        prefix: prefix
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_ImageSlider__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        prefix: prefix
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Location__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        prefix: prefix
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Share__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        prefix: prefix
+      }));
     }
   }]);
 
